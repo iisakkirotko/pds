@@ -5,12 +5,12 @@ services:
     restart: unless-stopped
     volumes:
       - type: bind
-        source: /pds/data/blobs
+        source: /opt/pds
         target: /pds
     ports:
       - '6010:3000'
     env_file:
-      - /pds/pds.env
+      - /opt/data/pds/pds.env
   watchtower:
     container_name: watchtower
     image: ghcr.io/nicholas-fedor/watchtower:latest
